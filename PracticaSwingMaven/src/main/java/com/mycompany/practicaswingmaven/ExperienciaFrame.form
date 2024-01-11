@@ -50,9 +50,9 @@
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="LugarTexto" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="AñoHasta" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="AñoDesde" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lugarTexto" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="añoHasta" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="añoDesde" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="jScrollPane1" pref="275" max="32767" attributes="0"/>
@@ -74,7 +74,7 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jScrollPane2" pref="338" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" pref="310" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Component id="VolverExp" min="-2" max="-2" attributes="0"/>
@@ -98,18 +98,18 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AñoDesde" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BotonAgregarDesde" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="añoDesde" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AñoHasta" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="añoHasta" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BotonHasta" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="LugarTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lugarTexto" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BotonLugar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -117,7 +117,7 @@
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" pref="208" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="118" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="BotonDescripcion" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -157,14 +157,7 @@
         <Property name="text" type="java.lang.String" value="A&#xd1;O DESDE:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="A&#xf1;oDesde">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="MMM yyyy" subtype="-1" type="1"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="LugarTexto">
+    <Component class="javax.swing.JTextField" name="lugarTexto">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -183,7 +176,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="DescripcionTrabajo">
+        <Component class="javax.swing.JTextArea" name="descripcionTrabajo">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -195,6 +188,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonDescripcionActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
@@ -216,27 +212,46 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAgregarDesdeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonLugar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonLugarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="text" type="java.lang.String" value="A&#xd1;O HASTA:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="A&#xf1;oHasta">
+    <Component class="javax.swing.JTextField" name="a&#xf1;oHasta">
     </Component>
     <Component class="javax.swing.JButton" name="BotonHasta">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonHastaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonBorrarExperiencia">
       <Properties>
         <Property name="text" type="java.lang.String" value="Borrar todo"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonBorrarExperienciaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="a&#xf1;oDesde">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+          <Format format="MM/yyyy" subtype="-1" type="1"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

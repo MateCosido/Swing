@@ -1,6 +1,8 @@
 
 package com.mycompany.practicaswingmaven;
 
+import java.util.Date;
+
 
 public class ExperienciaFrame extends javax.swing.JFrame {
 
@@ -18,21 +20,21 @@ public class ExperienciaFrame extends javax.swing.JFrame {
         VolverExp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        AñoDesde = new javax.swing.JFormattedTextField();
-        LugarTexto = new javax.swing.JTextField();
+        lugarTexto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        DescripcionTrabajo = new javax.swing.JTextArea();
+        descripcionTrabajo = new javax.swing.JTextArea();
         BotonDescripcion = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         AreaTextoExperiencia = new javax.swing.JTextArea();
         BotonAgregarDesde = new javax.swing.JButton();
         BotonLugar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        AñoHasta = new javax.swing.JTextField();
+        añoHasta = new javax.swing.JTextField();
         BotonHasta = new javax.swing.JButton();
         BotonBorrarExperiencia = new javax.swing.JButton();
+        añoDesde = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,17 +50,20 @@ public class ExperienciaFrame extends javax.swing.JFrame {
 
         jLabel2.setText("AÑO DESDE:");
 
-        AñoDesde.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MMM yyyy"))));
-
         jLabel3.setText("LUGAR:");
 
         jLabel4.setText("DESCRIPCION DEL PUESTO:");
 
-        DescripcionTrabajo.setColumns(20);
-        DescripcionTrabajo.setRows(5);
-        jScrollPane1.setViewportView(DescripcionTrabajo);
+        descripcionTrabajo.setColumns(20);
+        descripcionTrabajo.setRows(5);
+        jScrollPane1.setViewportView(descripcionTrabajo);
 
         BotonDescripcion.setText("Agregar");
+        BotonDescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonDescripcionActionPerformed(evt);
+            }
+        });
 
         AreaTextoExperiencia.setEditable(false);
         AreaTextoExperiencia.setColumns(20);
@@ -66,14 +71,36 @@ public class ExperienciaFrame extends javax.swing.JFrame {
         jScrollPane2.setViewportView(AreaTextoExperiencia);
 
         BotonAgregarDesde.setText("Agregar");
+        BotonAgregarDesde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAgregarDesdeActionPerformed(evt);
+            }
+        });
 
         BotonLugar.setText("Agregar");
+        BotonLugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonLugarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("AÑO HASTA:");
 
         BotonHasta.setText("Agregar");
+        BotonHasta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonHastaActionPerformed(evt);
+            }
+        });
 
         BotonBorrarExperiencia.setText("Borrar todo");
+        BotonBorrarExperiencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBorrarExperienciaActionPerformed(evt);
+            }
+        });
+
+        añoDesde.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/yyyy"))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,9 +128,9 @@ public class ExperienciaFrame extends javax.swing.JFrame {
                                                 .addComponent(jLabel3)
                                                 .addGap(41, 41, 41)))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(LugarTexto)
-                                            .addComponent(AñoHasta)
-                                            .addComponent(AñoDesde)))
+                                            .addComponent(lugarTexto)
+                                            .addComponent(añoHasta)
+                                            .addComponent(añoDesde)))
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -118,7 +145,7 @@ public class ExperienciaFrame extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(VolverExp)))
@@ -134,23 +161,23 @@ public class ExperienciaFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(AñoDesde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotonAgregarDesde))
+                            .addComponent(BotonAgregarDesde)
+                            .addComponent(añoDesde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(AñoHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(añoHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotonHasta))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LugarTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lugarTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addComponent(BotonLugar))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(BotonDescripcion)
                                 .addGap(0, 0, Short.MAX_VALUE))))
@@ -171,6 +198,30 @@ public class ExperienciaFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_VolverExpActionPerformed
 
+    private void BotonAgregarDesdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarDesdeActionPerformed
+        Date fechaNac = (Date) añoDesde.getValue();
+        System.out.println(fechaNac);
+        AreaTextoExperiencia.setText(añoDesde.getText()+"\n");
+    }//GEN-LAST:event_BotonAgregarDesdeActionPerformed
+
+    private void BotonHastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonHastaActionPerformed
+        AreaTextoExperiencia.setText(añoDesde.getText()+" - "+añoHasta.getText()+"\n");
+        
+    }//GEN-LAST:event_BotonHastaActionPerformed
+
+    private void BotonLugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLugarActionPerformed
+        AreaTextoExperiencia.setText(añoDesde.getText()+" - "+añoHasta.getText()+"\n"+lugarTexto.getText());
+    }//GEN-LAST:event_BotonLugarActionPerformed
+
+    private void BotonDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDescripcionActionPerformed
+        AreaTextoExperiencia.setText(añoDesde.getText()+" - "+añoHasta.getText()+"\n"+lugarTexto.getText()+"\n"+
+                descripcionTrabajo.getText());
+    }//GEN-LAST:event_BotonDescripcionActionPerformed
+
+    private void BotonBorrarExperienciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBorrarExperienciaActionPerformed
+        AreaTextoExperiencia.setText("");
+    }//GEN-LAST:event_BotonBorrarExperienciaActionPerformed
+
     
     public static void main(String args[]) {
     
@@ -183,16 +234,15 @@ public class ExperienciaFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea AreaTextoExperiencia;
-    private javax.swing.JFormattedTextField AñoDesde;
-    private javax.swing.JTextField AñoHasta;
     private javax.swing.JButton BotonAgregarDesde;
     private javax.swing.JButton BotonBorrarExperiencia;
     private javax.swing.JButton BotonDescripcion;
     private javax.swing.JButton BotonHasta;
     private javax.swing.JButton BotonLugar;
-    private javax.swing.JTextArea DescripcionTrabajo;
-    private javax.swing.JTextField LugarTexto;
     private javax.swing.JButton VolverExp;
+    private javax.swing.JFormattedTextField añoDesde;
+    private javax.swing.JTextField añoHasta;
+    private javax.swing.JTextArea descripcionTrabajo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -200,5 +250,6 @@ public class ExperienciaFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField lugarTexto;
     // End of variables declaration//GEN-END:variables
 }
