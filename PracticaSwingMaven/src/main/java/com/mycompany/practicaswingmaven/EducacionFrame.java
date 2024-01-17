@@ -39,7 +39,6 @@ public class EducacionFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tituloEdu = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        descripcionEdu = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         areatextoEdu = new javax.swing.JTextArea();
         agregarDescriEdu = new javax.swing.JButton();
@@ -49,6 +48,8 @@ public class EducacionFrame extends javax.swing.JFrame {
         agregarTituloEdu = new javax.swing.JButton();
         borrarEdu = new javax.swing.JButton();
         guardarEdu = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        descripcionEdu = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +84,11 @@ public class EducacionFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(areatextoEdu);
 
         agregarDescriEdu.setText("Agregar");
+        agregarDescriEdu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarDescriEduActionPerformed(evt);
+            }
+        });
 
         agregarFechaDesdeEdu.setText("Agregar");
         agregarFechaDesdeEdu.addActionListener(new java.awt.event.ActionListener() {
@@ -92,14 +98,38 @@ public class EducacionFrame extends javax.swing.JFrame {
         });
 
         agregarFechaHastaEdu.setText("Agregar");
+        agregarFechaHastaEdu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarFechaHastaEduActionPerformed(evt);
+            }
+        });
 
         agregarEstableEdu.setText("Agregar");
+        agregarEstableEdu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarEstableEduActionPerformed(evt);
+            }
+        });
 
         agregarTituloEdu.setText("Agregar");
+        agregarTituloEdu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarTituloEduActionPerformed(evt);
+            }
+        });
 
         borrarEdu.setText("Borrar todo");
+        borrarEdu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarEduActionPerformed(evt);
+            }
+        });
 
         guardarEdu.setText("Guardar");
+
+        descripcionEdu.setColumns(20);
+        descripcionEdu.setRows(5);
+        jScrollPane2.setViewportView(descripcionEdu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,7 +165,7 @@ public class EducacionFrame extends javax.swing.JFrame {
                                             .addComponent(establecimientoEdu)
                                             .addComponent(fechaDesdeEdu)
                                             .addComponent(tituloEdu)))
-                                    .addComponent(descripcionEdu))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(agregarFechaHastaEdu)
@@ -192,17 +222,17 @@ public class EducacionFrame extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(agregarDescriEdu)
-                            .addComponent(descripcionEdu, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(borrarEdu)
-                            .addComponent(guardarEdu))
-                        .addGap(9, 9, 9)
-                        .addComponent(jButton1)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(agregarDescriEdu)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(borrarEdu)
+                    .addComponent(guardarEdu))
+                .addGap(9, 9, 9)
+                .addComponent(jButton1)
                 .addContainerGap())
         );
 
@@ -215,8 +245,30 @@ public class EducacionFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void agregarFechaDesdeEduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarFechaDesdeEduActionPerformed
-        // TODO add your handling code here:
+        areatextoEdu.setText(fechaDesdeEdu.getText());
     }//GEN-LAST:event_agregarFechaDesdeEduActionPerformed
+
+    private void agregarFechaHastaEduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarFechaHastaEduActionPerformed
+        areatextoEdu.setText(fechaDesdeEdu.getText()+" - "+fechaHastaEdu.getText());
+    }//GEN-LAST:event_agregarFechaHastaEduActionPerformed
+
+    private void agregarEstableEduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEstableEduActionPerformed
+        areatextoEdu.setText(fechaDesdeEdu.getText()+" - "+fechaHastaEdu.getText()+"\n"+establecimientoEdu.getText());
+    }//GEN-LAST:event_agregarEstableEduActionPerformed
+
+    private void agregarTituloEduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarTituloEduActionPerformed
+        areatextoEdu.setText(fechaDesdeEdu.getText()+" - "+fechaHastaEdu.getText()+"\n"+establecimientoEdu.getText()+
+                "\n"+tituloEdu.getText());
+    }//GEN-LAST:event_agregarTituloEduActionPerformed
+
+    private void agregarDescriEduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarDescriEduActionPerformed
+        areatextoEdu.setText(fechaDesdeEdu.getText()+" - "+fechaHastaEdu.getText()+"\n"+establecimientoEdu.getText()+
+                "\n"+tituloEdu.getText()+"\n"+descripcionEdu.getText());
+    }//GEN-LAST:event_agregarDescriEduActionPerformed
+
+    private void borrarEduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarEduActionPerformed
+        areatextoEdu.setText("");
+    }//GEN-LAST:event_borrarEduActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,7 +313,7 @@ public class EducacionFrame extends javax.swing.JFrame {
     private javax.swing.JButton agregarTituloEdu;
     private javax.swing.JTextArea areatextoEdu;
     private javax.swing.JButton borrarEdu;
-    private javax.swing.JTextField descripcionEdu;
+    private javax.swing.JTextArea descripcionEdu;
     private javax.swing.JTextField establecimientoEdu;
     private javax.swing.JFormattedTextField fechaDesdeEdu;
     private javax.swing.JTextField fechaHastaEdu;
@@ -276,6 +328,7 @@ public class EducacionFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField tituloEdu;
     // End of variables declaration//GEN-END:variables
 }
