@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.practicaswingmaven;
 
-/**
- *
- * @author Usuario
- */
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
+
 public class HabilidadesFrame extends javax.swing.JFrame {
 
     /**
@@ -31,9 +28,9 @@ public class HabilidadesFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listaHab = new javax.swing.JList<>();
         agregarHab = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        areatextoHab = new javax.swing.JTextArea();
         borrarHab = new javax.swing.JButton();
+        habilidadTexto = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,11 +44,6 @@ public class HabilidadesFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel1.setText("Habilidades");
 
-        listaHab.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Java", "Swing", "Spring", "Spring Boot", "SQL", "Comunicación", "Responsabilidad", "Trabajo en equipo" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(listaHab);
 
         agregarHab.setText("Agregar");
@@ -61,11 +53,14 @@ public class HabilidadesFrame extends javax.swing.JFrame {
             }
         });
 
-        areatextoHab.setColumns(20);
-        areatextoHab.setRows(5);
-        jScrollPane2.setViewportView(areatextoHab);
+        borrarHab.setText("Eliminar");
+        borrarHab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarHabActionPerformed(evt);
+            }
+        });
 
-        borrarHab.setText(" Borrar");
+        jButton2.setText("Guardar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,13 +76,16 @@ public class HabilidadesFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(agregarHab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(borrarHab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(16, 16, 16)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(habilidadTexto)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(agregarHab)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                                        .addComponent(borrarHab)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton2)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -97,14 +95,17 @@ public class HabilidadesFrame extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(agregarHab)
-                        .addGap(17, 17, 17)
-                        .addComponent(borrarHab)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(habilidadTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(agregarHab)
+                            .addComponent(borrarHab)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -118,8 +119,22 @@ public class HabilidadesFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void agregarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarHabActionPerformed
-        areatextoHab.setText(listaHab.getSelectedValue());
+        modelo.addElement(habilidadTexto.getText());
+        
+        listaHab.setModel(modelo);
+        
+        habilidadTexto.setText("");//Limpia el TextField habilidadTexto despues de agregar la habilidad.
     }//GEN-LAST:event_agregarHabActionPerformed
+
+    private void borrarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarHabActionPerformed
+        int selec = listaHab.getSelectedIndex(); //guardar el campo que selecciono.
+        
+        DefaultListModel modelo = (DefaultListModel<String>) listaHab.getModel(); // casteo modelo a string dentro de la lista.
+        
+        modelo.remove(selec); //le digo que remueva el que selecciono.
+        
+        JOptionPane.showMessageDialog(null, "Habilidad eliminada");
+    }//GEN-LAST:event_borrarHabActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,15 +170,21 @@ public class HabilidadesFrame extends javax.swing.JFrame {
             }
         });
     }
+    
+    DefaultListModel<String> modelo = new DefaultListModel<>();
+    
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarHab;
-    private javax.swing.JTextArea areatextoHab;
     private javax.swing.JButton borrarHab;
+    private javax.swing.JTextField habilidadTexto;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listaHab;
     // End of variables declaration//GEN-END:variables
 }
