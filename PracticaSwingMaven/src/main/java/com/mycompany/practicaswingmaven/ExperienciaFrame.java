@@ -1,7 +1,9 @@
 
 package com.mycompany.practicaswingmaven;
 
+import java.util.ArrayList;
 import java.util.Date;
+
 
 
 public class ExperienciaFrame extends javax.swing.JFrame {
@@ -226,6 +228,7 @@ public class ExperienciaFrame extends javax.swing.JFrame {
         Date fechaNac = (Date) añoDesde.getValue();
         System.out.println(fechaNac);
         AreaTextoExperiencia.setText(añoDesde.getText()+"\n");
+        
     }//GEN-LAST:event_BotonAgregarDesdeActionPerformed
 
     private void BotonHastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonHastaActionPerformed
@@ -240,12 +243,33 @@ public class ExperienciaFrame extends javax.swing.JFrame {
     private void BotonDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDescripcionActionPerformed
         AreaTextoExperiencia.setText(añoDesde.getText()+" - "+añoHasta.getText()+"\n"+lugarTexto.getText()+"\n"+
                 descripcionTrabajo.getText());
+        
+        ArrayList<String> expList = new ArrayList<>();
+                expList.add(añoDesde.getText());
+                expList.add(añoHasta.getText());
+                expList.add(lugarTexto.getText());
+                expList.add(descripcionTrabajo.getText());
+                 
     }//GEN-LAST:event_BotonDescripcionActionPerformed
 
     private void BotonBorrarExperienciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBorrarExperienciaActionPerformed
         AreaTextoExperiencia.setText("");
     }//GEN-LAST:event_BotonBorrarExperienciaActionPerformed
 
+    public static String ConvertirListAString (ArrayList<String>lista){
+        StringBuilder resultado = new StringBuilder();
+        for(String elemento : lista){
+            resultado.append(elemento).append(", ");
+        }
+        
+        if (resultado.length() > 0) {
+            resultado.delete(resultado.length() - 2, resultado.length());
+        }
+        
+        return resultado.toString();
+    }
+    
+    
     
     public static void main(String args[]) {
     

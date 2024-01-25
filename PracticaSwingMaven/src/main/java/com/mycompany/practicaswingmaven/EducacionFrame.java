@@ -1,6 +1,8 @@
 
 package com.mycompany.practicaswingmaven;
 
+import java.util.ArrayList;
+
 
 public class EducacionFrame extends javax.swing.JFrame {
 
@@ -258,6 +260,14 @@ public class EducacionFrame extends javax.swing.JFrame {
     private void agregarDescriEduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarDescriEduActionPerformed
         areatextoEdu.setText(fechaDesdeEdu.getText()+" - "+fechaHastaEdu.getText()+"\n"+establecimientoEdu.getText()+
                 "\n"+tituloEdu.getText()+"\n"+descripcionEdu.getText());
+        
+        ArrayList<String> eduList = new ArrayList<>();
+            eduList.add(fechaDesdeEdu.getText());
+            eduList.add(fechaHastaEdu.getText());
+            eduList.add(establecimientoEdu.getText());
+            eduList.add(tituloEdu.getText());
+            eduList.add(descripcionEdu.getText());
+        
     }//GEN-LAST:event_agregarDescriEduActionPerformed
 
     private void borrarEduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarEduActionPerformed

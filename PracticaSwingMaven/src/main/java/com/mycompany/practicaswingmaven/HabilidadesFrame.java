@@ -124,6 +124,14 @@ public class HabilidadesFrame extends javax.swing.JFrame {
         listaHab.setModel(modelo);
         
         habilidadTexto.setText("");//Limpia el TextField habilidadTexto despues de agregar la habilidad.
+        
+        String[] listaHab = new String[5];
+        listaHab[0] = habilidadTexto.getText();
+        listaHab[1] = habilidadTexto.getText();
+        listaHab[2] = habilidadTexto.getText();
+        listaHab[3] = habilidadTexto.getText();
+        listaHab[4] = habilidadTexto.getText();
+       
     }//GEN-LAST:event_agregarHabActionPerformed
 
     private void borrarHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarHabActionPerformed
