@@ -39,7 +39,7 @@ public class ExperienciaFrame extends javax.swing.JFrame {
         añoDesde = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnGuardarExp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,7 +113,7 @@ public class ExperienciaFrame extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel7.setText("Ejemplo: 01/2000");
 
-        jButton1.setText("Generar PDF");
+        btnGuardarExp.setText("Guardar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,7 +161,7 @@ public class ExperienciaFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(BotonBorrarExperiencia)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)
+                                .addComponent(btnGuardarExp)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -209,7 +209,7 @@ public class ExperienciaFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonBorrarExperiencia)
-                    .addComponent(jButton1))
+                    .addComponent(btnGuardarExp))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(VolverExp)
                 .addContainerGap())
@@ -290,8 +290,8 @@ public class ExperienciaFrame extends javax.swing.JFrame {
     private javax.swing.JButton VolverExp;
     private javax.swing.JFormattedTextField añoDesde;
     private javax.swing.JTextField añoHasta;
+    private javax.swing.JButton btnGuardarExp;
     private javax.swing.JTextArea descripcionTrabajo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
