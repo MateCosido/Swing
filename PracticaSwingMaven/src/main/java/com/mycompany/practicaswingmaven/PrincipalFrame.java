@@ -21,13 +21,15 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jPanelPrincipal = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabelImagenPrincipal = new javax.swing.JLabel();
-        jLabelBienvenido = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        panePrevia = new javax.swing.JTextPane();
+        btnGenerarPdf = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2Experiencia = new javax.swing.JMenu();
         MostrarExp = new javax.swing.JMenuItem();
@@ -67,9 +69,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         jLabelImagenPrincipal.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Downloads\\Seba.png")); // NOI18N
 
-        jLabelBienvenido.setFont(new java.awt.Font("sansserif", 3, 18)); // NOI18N
-        jLabelBienvenido.setText("Bienvenido a mi portfolio Java Swing");
-
         jLabelNombre.setFont(new java.awt.Font("sansserif", 3, 14)); // NOI18N
         jLabelNombre.setText("Sebastián R. Larrosa");
 
@@ -84,6 +83,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel5.setText("ver. 0.0.1");
 
+        panePrevia.setEditable(false);
+        jScrollPane1.setViewportView(panePrevia);
+
+        btnGenerarPdf.setText("Generar PDF");
+
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
         jPanelPrincipal.setLayout(jPanelPrincipalLayout);
         jPanelPrincipalLayout.setHorizontalGroup(
@@ -96,16 +100,19 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jLabelImagenPrincipal)
-                        .addGap(18, 18, 18)
                         .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelBienvenido)
                             .addComponent(jLabelNombre)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel1))
-                        .addGap(0, 143, Short.MAX_VALUE)))
+                            .addComponent(jLabelImagenPrincipal))
+                        .addGap(48, 48, 48)
+                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                .addComponent(btnGenerarPdf)
+                                .addGap(0, 274, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1))))
                 .addContainerGap())
         );
         jPanelPrincipalLayout.setVerticalGroup(
@@ -113,20 +120,22 @@ public class PrincipalFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelImagenPrincipal)
                     .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jLabelBienvenido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelImagenPrincipal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelNombre)
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3))
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(btnGenerarPdf)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jLabel5))
@@ -246,6 +255,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem MostrarEdu;
     private javax.swing.JMenuItem MostrarExp;
     private javax.swing.JMenuItem MostrarHab;
+    private javax.swing.JButton btnGenerarPdf;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -253,7 +263,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabelBienvenido;
     private javax.swing.JLabel jLabelImagenPrincipal;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -264,5 +273,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanelPrincipal;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane panePrevia;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.practicaswingmaven;
 
-/**
- *
- * @author Usuario
- */
+
 public class AcercaFrame extends javax.swing.JFrame {
 
     /**
@@ -30,9 +24,11 @@ public class AcercaFrame extends javax.swing.JFrame {
         AcercaDe = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtAcerca = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        textAcerca = new javax.swing.JTextArea();
+        btnAgregarAcerca = new javax.swing.JButton();
+        btnGuardarAcerca = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,15 +45,29 @@ public class AcercaFrame extends javax.swing.JFrame {
 
         jLabel1.setText("Algo sobre mí:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtAcerca.setColumns(20);
+        txtAcerca.setRows(5);
+        jScrollPane1.setViewportView(txtAcerca);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        textAcerca.setColumns(20);
+        textAcerca.setRows(5);
+        jScrollPane2.setViewportView(textAcerca);
 
-        jButton1.setText("Agregar");
+        btnAgregarAcerca.setText("Agregar");
+        btnAgregarAcerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarAcercaActionPerformed(evt);
+            }
+        });
+
+        btnGuardarAcerca.setText("Guardar");
+
+        jButton1.setText("Borrar todo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,9 +76,6 @@ public class AcercaFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 643, Short.MAX_VALUE)
-                        .addComponent(volver))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(AcercaDe)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -78,9 +85,16 @@ public class AcercaFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)))
+                                .addComponent(btnAgregarAcerca)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnGuardarAcerca)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(volver))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -95,10 +109,13 @@ public class AcercaFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)))
+                            .addComponent(btnAgregarAcerca)))
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(volver)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(volver)
+                    .addComponent(btnGuardarAcerca)
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
@@ -109,6 +126,14 @@ public class AcercaFrame extends javax.swing.JFrame {
         PrincipalFrame principal = new PrincipalFrame();
         dispose();
     }//GEN-LAST:event_volverActionPerformed
+
+    private void btnAgregarAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAcercaActionPerformed
+        textAcerca.setText(txtAcerca.getText());
+    }//GEN-LAST:event_btnAgregarAcercaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        textAcerca.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,12 +172,14 @@ public class AcercaFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AcercaDe;
+    private javax.swing.JButton btnAgregarAcerca;
+    private javax.swing.JButton btnGuardarAcerca;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea textAcerca;
+    private javax.swing.JTextArea txtAcerca;
     private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }
