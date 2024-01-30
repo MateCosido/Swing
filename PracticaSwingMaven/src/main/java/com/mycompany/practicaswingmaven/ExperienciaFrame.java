@@ -13,8 +13,8 @@ public class ExperienciaFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-
     
+        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -227,8 +227,7 @@ public class ExperienciaFrame extends javax.swing.JFrame {
     private void BotonAgregarDesdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarDesdeActionPerformed
         Date fechaNac = (Date) añoDesde.getValue();
         System.out.println(fechaNac);
-        AreaTextoExperiencia.setText(añoDesde.getText()+"\n");
-        
+        AreaTextoExperiencia.setText(añoDesde.getText()+"\n");        
     }//GEN-LAST:event_BotonAgregarDesdeActionPerformed
 
     private void BotonHastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonHastaActionPerformed

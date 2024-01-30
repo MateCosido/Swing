@@ -9,8 +9,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-
-
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -27,9 +27,9 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        panePrevia = new javax.swing.JTextPane();
         btnGenerarPdf = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        panePrevia = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2Experiencia = new javax.swing.JMenu();
         MostrarExp = new javax.swing.JMenuItem();
@@ -83,10 +83,16 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel5.setText("ver. 0.0.1");
 
-        panePrevia.setEditable(false);
-        jScrollPane1.setViewportView(panePrevia);
-
         btnGenerarPdf.setText("Generar PDF");
+        btnGenerarPdf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarPdfActionPerformed(evt);
+            }
+        });
+
+        panePrevia.setColumns(20);
+        panePrevia.setRows(5);
+        jScrollPane1.setViewportView(panePrevia);
 
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
         jPanelPrincipal.setLayout(jPanelPrincipalLayout);
@@ -111,15 +117,15 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                                 .addComponent(btnGenerarPdf)
-                                .addGap(0, 274, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                         .addComponent(jLabelImagenPrincipal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -131,9 +137,10 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
+                        .addComponent(jLabel3)
+                        .addGap(0, 1, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGenerarPdf)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -238,6 +245,10 @@ public class PrincipalFrame extends javax.swing.JFrame {
         HabilidadesFrame habilidades = new HabilidadesFrame();
         habilidades.setVisible(true);
     }//GEN-LAST:event_MostrarHabActionPerformed
+
+    private void btnGenerarPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPdfActionPerformed
+        
+    }//GEN-LAST:event_btnGenerarPdfActionPerformed
     
     
     public static void main(String args[]) {
@@ -274,6 +285,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane panePrevia;
+    private javax.swing.JTextArea panePrevia;
     // End of variables declaration//GEN-END:variables
 }
