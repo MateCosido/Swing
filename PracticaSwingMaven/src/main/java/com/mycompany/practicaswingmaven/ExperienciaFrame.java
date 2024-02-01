@@ -14,6 +14,8 @@ public class ExperienciaFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
+   // DatosCompartidos datosCompartidos = new DatosCompartidos();
+    
         
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -227,7 +229,8 @@ public class ExperienciaFrame extends javax.swing.JFrame {
     private void BotonAgregarDesdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarDesdeActionPerformed
         Date fechaNac = (Date) añoDesde.getValue();
         System.out.println(fechaNac);
-        AreaTextoExperiencia.setText(añoDesde.getText()+"\n");        
+        AreaTextoExperiencia.setText(añoDesde.getText()+"\n"); 
+        
     }//GEN-LAST:event_BotonAgregarDesdeActionPerformed
 
     private void BotonHastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonHastaActionPerformed
@@ -242,12 +245,11 @@ public class ExperienciaFrame extends javax.swing.JFrame {
     private void BotonDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDescripcionActionPerformed
         AreaTextoExperiencia.setText(añoDesde.getText()+" - "+añoHasta.getText()+"\n"+lugarTexto.getText()+"\n"+
                 descripcionTrabajo.getText());
+        //datosCompartidos.setFechaInicioExp(Integer.parseInt(añoDesde.getText()));
+        //datosCompartidos.setFechaFinExp(Integer.parseInt(añoHasta.getText()));
+        //datosCompartidos.setLugarExp(lugarTexto.getText());
+       // datosCompartidos.setDescExp(descripcionTrabajo.getText());        
         
-        ArrayList<String> expList = new ArrayList<>();
-                expList.add(añoDesde.getText());
-                expList.add(añoHasta.getText());
-                expList.add(lugarTexto.getText());
-                expList.add(descripcionTrabajo.getText());
                  
     }//GEN-LAST:event_BotonDescripcionActionPerformed
 

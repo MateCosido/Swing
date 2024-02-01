@@ -10,6 +10,9 @@ public class PrincipalFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
+    //DatosCompartidos datosCompartidos = new DatosCompartidos();
+   // int fechaInicioExp = datosCompartidos.getFechaInicioExp();
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -248,6 +251,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
     private void btnGenerarPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPdfActionPerformed
         
+        //panePrevia.setText(Integer.toString(fechaInicioExp));
     }//GEN-LAST:event_btnGenerarPdfActionPerformed
     
     
